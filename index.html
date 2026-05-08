@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syeda Ayesha Unnisa | JavaScript projects Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><i class="fas fa-code"></i> <span class="logo-text">Syeda Ayesha!</span></div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="showPage('home')" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="#project1" onclick="showPage('project1')"><i class="fas fa-paragraph"></i> <span>Text</span></a></li>
+                <li><a href="#project2" onclick="showPage('project2')"><i class="fas fa-palette"></i> <span>Theme</span></a></li>
+                <li><a href="#project3" onclick="showPage('project3')"><i class="fas fa-clock"></i> <span>Clock</span></a></li>
+                <li><a href="#project4" onclick="showPage('project4')"><i class="fas fa-calculator"></i> <span>Calc</span></a></li>
+                <li><a href="#project5" onclick="showPage('project5')"><i class="fas fa-images"></i> <span>Slider</span></a></li>
+                <li><a href="#project6" onclick="showPage('project6')"><i class="fas fa-cloud"></i> <span>API</span></a></li>
+                <li><a href="#project7" onclick="showPage('project7')"><i class="fas fa-hourglass-half"></i> <span>Timer</span></a></li>
+                <li><a href="#project8" onclick="showPage('project8')"><i class="fas fa-traffic-light"></i> <span>Traffic</span></a></li>
+                <li><a href="#project9" onclick="showPage('project9')"><i class="fas fa-user-plus"></i> <span>Register</span></a></li>
+                <li><a href="#project10" onclick="showPage('project10')"><i class="fas fa-tasks"></i> <span>Todo</span></a></li>
+                 </ul>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="project active">
+            <div class="hero">
+                <div class="hero-badge"><i class="fas fa-crown"></i>JavaScript projects Portfolio</div>
+                <h1> hey!, I'm Syeda Ayesha Unnisa</h1>
+                <p>A BCA student Currently Doing A Web Development Course.</p>
+                <p style="font-size:1rem; opacity:0.8;">
+This portfolio showcases my hands-on projects where I’ve built interactive web features 
+like a digital clock, calculator, image carousel, API data fetcher, and more.
+</p><br>
+<p>Each project reflects my learning journey and focus on writing clean, functional, 
+and user-friendly code.</p>
+                <div class="hero-stats">
+                    <div class="stat"><h3>10+</h3><p>Live Projects</p></div>
+                    <div class="stat"><h3>100%</h3><p>Responsive</p></div>
+                    <div class="stat"><h3>0</h3><p>Libraries Used</p></div>
+                </div>
+                <button onclick="showPage('project1')" class="hero-btn">View My Work <i class="fas fa-rocket"></i></button>
+            </div>
+        </div>
+
+        <div id="project1" class="project">
+            <h2><i class="fas fa-paragraph"></i> 1. Dynamic Paragraph Creator</h2>
+            <div class="demo-area">
+                <div class="project-controls">
+                    <button onclick="createParagraph()"><i class="fas fa-wand-magic-sparkles"></i> Generate</button>
+                    <button onclick="clearParagraphs()" class="btn-danger"><i class="fas fa-trash"></i> Clear All</button>
+                </div>
+                <div id="textContainer"></div>
+            </div>
+        </div>
+
+        <div id="project2" class="project">
+            <h2><i class="fas fa-palette"></i> 2. Pastel Theme Generator</h2>
+            <div class="demo-area">
+                <div class="color-picker-area">
+                    <label><i class="fas fa-eye-dropper"></i> Choose Pastel Base Color:</label>
+                    <input type="color" id="colorPicker" value="#e0e7ff" onchange="changeBackground()">
+                    <div class="color-presets">
+                        <span class="preset" style="background:#7285c5" onclick="setPreset('#e0e7ff')" title="Lavender"></span>
+                        <span class="preset" style="background:#c574a2" onclick="setPreset('#fce7f3')" title="Pink"></span>
+                        <span class="preset" style="background:#78d487" onclick="setPreset('#dbeafe')" title="Blue"></span>
+                        <span class="preset" style="background:#ca6e6e" onclick="setPreset('#dcfce7')" title="Mint"></span>
+                        <span class="preset" style="background:#a36b36" onclick="setPreset('#fef3c7')" title="Vanilla"></span>
+                        <span class="preset" style="background:#a080d3" onclick="setPreset('#ffedd5')" title="Peach"></span>
+                    </div>
+                    <p class="hint">Auto-converts to soft gradients - no harsh colors</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="project3" class="project">
+            <h2><i class="fas fa-clock"></i> 3. Live Digital Clock</h2>
+            <div class="demo-area">
+                <div id="clock" class="clock">Loading...</div>
+                <div class="clock-info">
+                    <span><i class="fas fa-calendar"></i> <span id="clockDate"></span></span>
+                    <span><i class="fas fa-globe"></i> IST</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="project4" class="project">
+            <h2><i class="fas fa-calculator"></i> 4.Calculator</h2>
+            <div class="demo-area calc-container">
+                <input type="text" id="calcDisplay" readonly placeholder="0">
+                <div class="calc-grid">
+                    <button onclick="calcInput('C')" class="calc-btn clear">AC</button>
+                    <button onclick="calcInput('⌫')" class="calc-btn"><i class="fas fa-delete-left"></i></button>
+                    <button onclick="calcInput('%')" class="calc-btn op">%</button>
+                    <button onclick="calcInput('/')" class="calc-btn op">÷</button>
+                    <button onclick="calcInput(7)" class="calc-btn">7</button>
+                    <button onclick="calcInput(8)" class="calc-btn">8</button>
+                    <button onclick="calcInput(9)" class="calc-btn">9</button>
+                    <button onclick="calcInput('*')" class="calc-btn op">×</button>
+                    <button onclick="calcInput(4)" class="calc-btn">4</button>
+                    <button onclick="calcInput(5)" class="calc-btn">5</button>
+                    <button onclick="calcInput(6)" class="calc-btn">6</button>
+                    <button onclick="calcInput('-')" class="calc-btn op">−</button>
+                    <button onclick="calcInput(1)" class="calc-btn">1</button>
+                    <button onclick="calcInput(2)" class="calc-btn">2</button>
+                    <button onclick="calcInput(3)" class="calc-btn">3</button>
+                    <button onclick="calcInput('+')" class="calc-btn op">+</button>
+                    <button onclick="calcInput(0)" class="calc-btn" style="grid-column: span 2;">0</button>
+                    <button onclick="calcInput('.')" class="calc-btn">.</button>
+                    <button onclick="calcInput('=')" class="calc-btn equal">=</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="project5" class="project">
+            <h2><i class="fas fa-images"></i> 5. Image Slider, Carousal</h2>
+            <div class="demo-area">
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <div class="slide active">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=450&fit=crop" alt="Mountain">
+                            <div class="slide-overlay"><h3>Mountain Majesty</h3><p>Swipe or use arrows</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=450&fit=crop" alt="Nature">
+                            <div class="slide-overlay"><h3>Forest Dreams</h3><p>Peaceful wilderness awaits</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop" alt="Lake">
+                            <div class="slide-overlay"><h3>Serene Waters</h3><p>Calm reflections of tranquility</p></div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=800&h=450&fit=crop" alt="Beach">
+                            <div class="slide-overlay"><h3>Ocean Vibes</h3><p>Endless blue horizons</p></div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button onclick="prevSlide()" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button onclick="toggleAutoSlide()" id="autoBtn" class="slider-btn"><i class="fas fa-play"></i> Auto</button>
+                        <button onclick="nextSlide()" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                        <span class="dot" onclick="goToSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="project6" class="project">
+            <h2><i class="fas fa-cloud-download-alt"></i> 6. Live API Data Fetch</h2>
+            <div class="demo-area">
+                <div class="project-controls">
+                    <button onclick="fetchUsers()"><i class="fas fa-users"></i> Fetch Users</button>
+                    <button onclick="clearUsers()" class="btn-danger"><i class="fas fa-trash"></i> Clear</button>
+                </div>
+                <div id="userList" class="api-grid"></div>
+            </div>
+        </div>
+
+        <div id="project7" class="project">
+            <h2><i class="fas fa-hourglass-half"></i> 7.Timer App</h2>
+            <div class="demo-area timer-area">
+                <div class="timer-presets">
+                    <button onclick="setTimer(1)">1 min</button>
+                    <button onclick="setTimer(5)">5 min</button>
+                    <button onclick="setTimer(25)">25 min</button>
+                    <button onclick="setTimer(50)">50 min</button>
+                </div>
+                <label>Custom Duration:</label>
+                <input type="number" id="timerMinutes" value="1" min="1" max="60"> minutes
+                <div id="timerDisplay">01:00</div>
+                <div class="timer-progress"><div id="progressBar"></div></div>
+                <div class="timer-controls">
+                    <button id="startTimer" onclick="startCountdown()"><i class="fas fa-play"></i> Start</button>
+                    <button id="stopTimer" onclick="stopCountdown()" disabled><i class="fas fa-pause"></i> Pause</button>
+                    <button onclick="resetTimer()"><i class="fas fa-redo"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="project8" class="project">
+            <h2><i class="fas fa-traffic-light"></i> 8.Traffic Signal Stimulator</h2>
+            <div class="demo-area traffic-area">
+                <p class="traffic-subtitle"><i class="fas fa-info-circle"></i> Intelligent 3-Way Intersection - Real-time Simulation</p>
+                <div class="traffic-system">
+                    <div class="traffic-unit">
+                        <h4><i class="fas fa-arrow-up"></i> North</h4>
+                        <div class="light red" id="northRed"></div>
+                        <div class="light yellow" id="northYellow"></div>
+                        <div class="light green" id="northGreen"></div>
+                        <div class="countdown" id="northCount">--</div>
+                    </div>
+                    <div class="traffic-unit">
+                        <h4><i class="fas fa-arrow-right"></i> East</h4>
+                        <div class="light red" id="eastRed"></div>
+                        <div class="light yellow" id="eastYellow"></div>
+                        <div class="light green" id="eastGreen"></div>
+                        <div class="countdown" id="eastCount">--</div>
+                    </div>
+                    <div class="traffic-unit">
+                        <h4><i class="fas fa-arrow-down"></i> South</h4>
+                        <div class="light red" id="southRed"></div>
+                        <div class="light yellow" id="southYellow"></div>
+                        <div class="light green" id="southGreen"></div>
+                        <div class="countdown" id="southCount">--</div>
+
+                    </div>
+                </div>
+                <div class="traffic-status">
+                    <div class="status-row">
+                        <span><i class="fas fa-circle" id="statusIcon" style="color: #fca5a5;"></i> <strong id="trafficStatus">System Offline</strong></span>
+                        <span><i class="fas fa-sync"></i> Cycles: <strong id="cycleCount">0</strong></span>
+                        <span><i class="fas fa-clock"></i> Uptime: <strong id="trafficTime">00:00</strong></span>
+                    </div>
+                </div>
+                <div class="project-controls">
+                    <button onclick="startTrafficCycle()"><i class="fas fa-play-circle"></i> Start 24hr System</button>
+                    <button onclick="stopTrafficCycle()"><i class="fas fa-stop-circle"></i> Emergency Stop</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="project9" class="project">
+            <h2><i class="fas fa-user-shield"></i> 9. Secure Registration System</h2>
+            <div class="demo-area">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                        <small class="error-msg" id="emailError"></small>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" placeholder="10 digits" required>
+                            <small class="error-msg" id="phoneError"></small>
+                        </div>
+                        <div class="form-group password-wrapper">
+                            <label><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" id="password" placeholder="Min 6 characters" required>
+                            <i class="fa fa-eye toggle-icon" onclick="togglePassword('password')"></i>
+                            <small class="error-msg" id="passwordError"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group password-wrapper">
+                            <label><i class="fas fa-lock"></i> Confirm Password</label>
+                            <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                            <i class="fa fa-eye toggle-icon" onclick="togglePassword('confirmPassword')"></i>
+                            <small class="error-msg" id="confirmError"></small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-shield-alt"></i> Security Verification</label>
+                        <div class="captcha">
+                            <span id="captchaCode"></span>
+                            <input type="text" id="captchaInput" class="captcha-input" placeholder="Enter code" required>
+                            <button type="button" onclick="generateCaptcha()"><i class="fas fa-sync"></i></button>
+                        </div>
+                        <small class="error-msg" id="captchaError"></small>
+                    </div>
+                    <button type="submit" id="submitBtn" disabled><i class="fas fa-check-circle"></i> Create Account</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="project10" class="project">
+            <h2><i class="fas fa-tasks"></i> 10. Todo List</h2>
+            <div class="demo-area">
+                <div class="todo-header">
+                    <input type="text" id="todoInput" placeholder="What needs to be done today?" onkeypress="handleTodoKeypress(event)">
+                    <button onclick="addTodo()"><i class="fas fa-plus"></i> Add</button>
+                </div>
+                <div class="todo-stats">
+                    <span><i class="fas fa-list"></i> Total: <strong id="totalTasks">0</strong></span>
+                    <span><i class="fas fa-check-circle"></i> Done: <strong id="completedTasks">0</strong></span>
+                    <span><i class="fas fa-clock"></i> Active: <strong id="pendingTasks">0</strong></span>
+                </div>
+                <div class="todo-filters">
+                    <button onclick="filterTodos('all')" class="filter-btn active" data-filter="all">All</button>
+                    <button onclick="filterTodos('active')" class="filter-btn" data-filter="active">Active</button>
+                    <button onclick="filterTodos('completed')" class="filter-btn" data-filter="completed">Done</button>
+                </div>
+                <ul id="todoList"></ul>
+                <button onclick="clearCompleted()" class="btn-clear">
+                    <i class="fas fa-broom"></i> Clear Completed Tasks
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
